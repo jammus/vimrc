@@ -19,6 +19,8 @@ endif
 " This must be first, because it changes other options as a side effect.
 set nocompatible
 
+
+call pathogen#runtime_append_all_bundles()
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 
@@ -97,7 +99,12 @@ if !exists(":DiffOrig")
 endif
 
 " My stuff
-set backupdir=~/.vimswaps,/tmp
+if MySys() == "windows"
+    set backupdir=C:\Windows\Temp
+else
+    set backupdir=~/.vimswaps,/tmp
+endif
+
 let mapleader = ","
 
 set tabstop=4
@@ -119,8 +126,19 @@ nnoremap <leader><space> :noh<cr>
 nnoremap <tab> %
 vnoremap <tab> %
 
-" set colorcolumn=85 -- not available in 7.2
-" set relativenumber
+filetype indent plugin on
+" Options for Sparkup
+let g:sparkupArgs='--no-last-newline --end-guide-format="/\%s"'
+"
+try
+ set colorcolumn=85
+ set relativenumber
+catch
+endtry
 " set undofile
 
+set guifont=Droid_Sans_Mono:h10:cANSI
+set background=dark
+colors desert
 " au FocusLost * :wa -- save all file on losing focus. not sure if want.
+
