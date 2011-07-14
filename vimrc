@@ -21,6 +21,7 @@ set nocompatible
 
 
 call pathogen#runtime_append_all_bundles()
+call pathogen#helptags()
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 
@@ -99,11 +100,14 @@ if !exists(":DiffOrig")
 endif
 
 " My stuff
-if MySys() == "windows"
-    set backupdir=C:\Windows\Temp
-else
-    set backupdir=~/.vimswaps,/tmp
-endif
+try
+    if MySys() == "windows"
+        set backupdir=C:\Windows\Temp
+    else
+        set backupdir=~/.vimswaps,/tmp
+    endif
+catch
+endtry
 
 let mapleader = ","
 
