@@ -5,3 +5,7 @@
 [submodule "bundle/surround"]
 	path = bundle/surround
 	url = https://github.com/tpope/vim-surround.git
+    ignore = dirty
+[submodule "vim-pathogen"]
+	path = vim-pathogen
+	url = https://github.com/tpope/vim-pathogen
