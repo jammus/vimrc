@@ -2,7 +2,7 @@
 " An example for a vimrc file.
 "
 " Maintainer:	Bram Moolenaar <Bram@vim.org>
-" Last change:	2008 Jul 02
+" Last change:	2008 Dec 17
 "
 " To use it, copy it to
 "     for Unix and OS/2:  ~/.vimrc
@@ -15,10 +15,9 @@ if v:progname =~? "evim"
   finish
 endif
 
-" Use Vim settings, rather then Vi settings (much better!).
+" Use Vim settings, rather than Vi settings (much better!).
 " This must be first, because it changes other options as a side effect.
 set nocompatible
-
 
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
@@ -112,19 +111,19 @@ endtry
 
 let mapleader = ","
 
-" spaces, not tabs
+" tabs, not spaces
 set tabstop=4
 set shiftwidth=4
-set softtabstop=4
-set expandtab
 
 " case insenstive search if search string is all lowercase
 set ignorecase
 set smartcase
+
 " highlight search
 set incsearch
 set showmatch
 set hlsearch
+
 " clear highlights
 nnoremap <leader><space> :noh<cr>
 
@@ -132,16 +131,10 @@ nnoremap <leader><space> :noh<cr>
 nnoremap <tab> %
 vnoremap <tab> %
 
-filetype indent plugin on
-" Options for Sparkup
-let g:sparkupArgs='--no-last-newline --end-guide-format="/\%s"'
-
 try
- set colorcolumn=85
- set relativenumber
+	set colorcolumn=85
+	set relativenumber
 catch
 endtry
 
 set guifont=Droid_Sans_Mono:h10:cANSI
-set background=dark
-colors desert
