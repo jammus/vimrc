@@ -142,6 +142,5 @@ try
 catch
 endtry
 
-set guifont=Droid_Sans_Mono:h10:cANSI
-set background=dark
-colors desert
+set undodir=~/.vimundo
+set undofile
