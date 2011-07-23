@@ -139,8 +139,8 @@ let g:sparkupArgs='--no-last-newline --end-guide-format="/\%s"'
 try
  set colorcolumn=85
  set relativenumber
+ set undodir=~/.vimundo
+ set undofile
 catch
 endtry
 
-set undodir=~/.vimundo
-set undofile
