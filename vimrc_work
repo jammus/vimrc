@@ -138,3 +138,25 @@ catch
 endtry
 
 set guifont=Droid_Sans_Mono:h10:cANSI
+
+function SizeUpFunc()
+	if exists("g:oldColumns")
+		return
+	endif
+	let g:oldColumns = &columns
+	let g:oldLines = &lines
+	au VimLeave * SizeDown
+	set columns=269 lines=999
+endfunction
+command SizeUp call SizeUpFunc()
+
+function SizeDownFunc()
+	if !exists("g:oldColumns")
+		return
+	endif
+	let &columns = g:oldColumns
+	let &lines = g:oldLines
+	unlet g:oldColumns
+	unlet g:oldLines
+endfunction
+command SizeDown call SizeDownFunc()
