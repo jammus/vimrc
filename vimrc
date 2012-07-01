@@ -148,5 +148,11 @@ set background=dark
 let g:solarized_termcolors=256
 colorscheme solarized
 
+cmap w!! %!sudo tee > /dev/null %
+
 nnoremap <leader>f :NERDTreeToggle<cr>
 map <leader>/ :TlistToggle<cr>
+
+" Ctrl-P
+let g:ctrlp_follow_symlinks=1
+let g:ctrlp_working_path_mode=0
