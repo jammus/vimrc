@@ -20,7 +20,7 @@ endif
 set nocompatible
 
 
-call pathogen#runtime_append_all_bundles()
+call pathogen#incubate()
 call pathogen#helptags()
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
@@ -138,10 +138,12 @@ let g:sparkupArgs='--no-last-newline --end-guide-format="/\%s"'
 
 try
  set colorcolumn=85
+ set number
  set relativenumber
  set undodir=~/.vimundo
  set undofile
 catch
+ set number
 endtry
 
 set background=dark
@@ -156,3 +158,6 @@ map <leader>/ :TlistToggle<cr>
 " Ctrl-P
 let g:ctrlp_follow_symlinks=1
 let g:ctrlp_working_path_mode=0
+
+au BufNewFile,BufRead,BufReadPost *.frag,*.vert,*.fp,*.vp,*.glsl set syntax=glsl 
+au BufNewFile,BufRead,BufReadPost *.twig set filetype=jinja

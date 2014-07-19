@@ -48,3 +48,15 @@
 [submodule "bundle/vim-coffee-script"]
 	path = bundle/vim-coffee-script
 	url = https://github.com/kchmck/vim-coffee-script.git
+[submodule "bundle/vim-glsl"]
+	path = bundle/vim-glsl
+	url = https://github.com/vim-scripts/glsl.vim
+[submodule "bundle/vim-less"]
+	path = bundle/vim-less
+	url = https://github.com/groenewege/vim-less.git
+[submodule "bundle/jinja"]
+	path = bundle/jinja
+	url = https://github.com/uggedal/jinja-vim.git
+[submodule "bundle/syntastic"]
+	path = bundle/syntastic
+	url = https://github.com/scrooloose/syntastic.git
